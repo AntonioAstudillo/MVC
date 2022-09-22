@@ -16,21 +16,23 @@ class Operaciones extends Controlador{
    }
 
 
-   public function sumar($numero1 = 0 , $numero2 = 0 )
+   public function sumar()
    {
-      $resultado = $this->metodo->sumar($numero1  , $numero2);
 
-      $datos = [
-         'numero1' => $numero1,
-         'numero2' => $numero2,
-         'resultado' => $resultado
-      ];
+      if($_SERVER['REQUEST_METHOD'] == 'POST')
+      {
+         $numero1 = $_POST['numero1'];
+         $numero2 = $_POST['numero2'];
+         $resultado = $this->metodo->sumar($numero1  , $numero2);
+
+         echo $resultado;
+      }else{
+         $this->vista('sumarVista');
+      }
 
 
-      $this->vista('sumarVista' , $datos);
 
    }
-
 
 }
 

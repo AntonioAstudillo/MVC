@@ -5,4 +5,5 @@ require_once 'libs/autoload.php';
 
 
 /*Aqui podemos incluir más librerias o variables globales */
+define('RUTA' , '/repaso/mvc/');
  ?>
